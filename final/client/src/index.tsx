@@ -20,8 +20,7 @@ export const typeDefs = gql`
   }
 `;
 
-// Set up our apollo-client to point at the server we created
-// this can be local or a remote endpoint
+// Set up our apollo-client to point at the server we created this can be local or a remote endpoint
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache,
   uri: 'http://localhost:4000/graphql',
