@@ -1,7 +1,8 @@
 const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./schema');
 
+const typeDefs = require('./schema');
 const { createStore } = require('./utils');
+const resolvers = require('./resolvers');
 
 const LaunchAPI = require('./datasources/launch');
 const UserAPI = require('./datasources/user');
@@ -11,6 +12,7 @@ const store = createStore();
 
 const server = new ApolloServer({
   typeDefs,
+  resolvers,
 
   /**
    * NOTE: If you use this.context in a datasource, it's critical to create a new instance in the dataSources function,
